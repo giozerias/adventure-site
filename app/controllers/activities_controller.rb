@@ -5,11 +5,21 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
+    @pictures_hash = {"hiking" => "hike.jpg",
+    "swimming" => "swimming.jpg",
+    "kickboxing" => "kickboxing.jpg",
+    "yoga" => "yoga.jpg",
+    "rock_climbing" => "rock_climbing.jpg"
+    }
   end
 
   # GET /activities/1
   # GET /activities/1.json
   def show
+  end
+
+  def color
+    @color = params[:color]
   end
 
   # GET /activities/new
