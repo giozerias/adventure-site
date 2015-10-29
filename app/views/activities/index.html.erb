@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Activities</h1>
-
-<% @pictures_hash.each do |k,v| %>
-  <p>
-    <%= image_tag v, alt: k %>
-  </p>
-<% end %>
+  <div class="row">
+    <% @pictures_array.shuffle.each do |pic| %>
+        <div class="col-md-2">
+          <p>
+            <%= image_tag pic, alt: "activity_pics" %>
+          </p>
+        </div>
+    <% end %>
+  </div>
 
 <table>
   <thead>
@@ -37,8 +40,3 @@
 <br>
 
 <%= link_to 'New Activity', new_activity_path %>
-
-<%= link_to "Red", activities_path(color: "red"), class: "btn btn-danger" %>
-<%= link_to "Blue", activities_path(color: "blue"), class: "btn btn-primary" %>
-<%= link_to "Purple", activities_path(color: "purple"), class: "btn btn-purple" %>
-<%= link_to "Orange", activities_path(color: "orange"), class: "btn btn-orange" %>

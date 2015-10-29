@@ -5,12 +5,12 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
-    @pictures_hash = {"hiking" => "hike.jpg",
-    "swimming" => "swimming.jpg",
-    "kickboxing" => "kickboxing.jpg",
-    "yoga" => "yoga.jpg",
-    "rock_climbing" => "rock_climbing.jpg"
-    }
+    @pictures_array = [ "hike.jpg",
+    "swimming.jpg",
+    "kickboxing.jpg",
+    "yoga.jpg",
+    "rock_climbing.jpg"
+  ]
   end
 
   # GET /activities/1
